@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.huaching.xa.campus.ucenter</groupId>
+    <artifactId>ucenter</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+
+    <name>dcs_ucenter</name>
+    <description>智慧校园-产品-v1.0-用户资源中心</description>
+
+    <parent>
+        <artifactId>root</artifactId>
+        <groupId>com.huaching.xa.campus</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.huaching.xa.campus.common</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- nacos服务发现 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!-- nacos配置管理 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.security.oauth.boot</groupId>
+                    <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth.boot</groupId>
+            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+            <version>2.1.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.huaching.xa.campus.feign_service</groupId>
+            <artifactId>feign_service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.reporting.outputEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration> <!--设置程序执行的主类 -->
+                    <fork>true</fork>
+                    <excludeDevtools>true</excludeDevtools>
+                    <mainClass>com.huaching.xa.campus.CampusDCSUcenterApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>dcs_ucenter</finalName>
+    </build>
+
+    <!--<profiles>-->
+        <!--&lt;!&ndash; 生产环境 &ndash;&gt;-->
+        <!--<profile>-->
+            <!--<id>dev</id>-->
+            <!--<activation>-->
+                <!--<activeByDefault>true</activeByDefault>-->
+            <!--</activation>-->
+            <!--<properties>-->
+                <!--<profiles.active>dev</profiles.active>-->
+                <!--<target.dir>src/profiles/dev/</target.dir>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--&lt;!&ndash; 生产环境 &ndash;&gt;-->
+        <!--<profile>-->
+            <!--<id>prod</id>-->
+            <!--<activation>-->
+                <!--<activeByDefault>true</activeByDefault>-->
+            <!--</activation>-->
+            <!--<properties>-->
+                <!--<profiles.active>prod</profiles.active>-->
+                <!--<target.dir>src/profiles/prod/</target.dir>-->
+            <!--</properties>-->
+
+        <!--</profile>-->
+    <!--</profiles>-->
+
+</project>

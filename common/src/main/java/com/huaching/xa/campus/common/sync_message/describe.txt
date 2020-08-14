@@ -1,0 +1,87 @@
+异步的消息处理
+
+
+使用说明：
+1.fanout广播模式
+简单的讲，就是把交换机（Exchange）里的消息发送给所有绑定该交换机的队列，忽略routingKey。
+
+QUEUE{A,B,C}
+FanoutExchange(Exchange01)
+A -> binding -> Exchange01
+B -> binding -> Exchange01
+C -> binding -> Exchange01
+
+send(Exchange01)
+A,B,C 同时都可以收到
+
+FanoutTestRabbitMQSendService.java ---》发送方
+@Service
+public class FanoutTestRabbitMQSendService extends RabbitMQSendService<TestBean> {
+
+}
+
+class TestBean implements Serializable {
+    private String value;
+    private String value2;
+
+     public String getValue() {
+         return value;
+     }
+
+     public void setValue(String value) {
+         this.value = value;
+     }
+
+     public String getValue2() {
+         return value2;
+     }
+
+     public void setValue2(String value2) {
+         this.value2 = value2;
+     }
+ }
+
+使用：
+TestBean testBean = new TestBean();
+testBean.setValue("111");
+estBean.setValue2("222");
+fanoutTestRabbitMQSendService.send("exchange02", "", testBean));
+
+Test01RabbitMQListenerService.java ---》接收方
+@Service
+@RabbitListener(queues = Config.QUEUE_TEST_FANOUT_A_CODE)
+public class Test01RabbitMQListenerService extends RabbitMQListenerService<TestBean> {
+    @Override
+    public void execute(TestBean content) {
+         System.out.println(JSON.toJSONString(content));
+    }
+}
+
+Test01RabbitMQListenerService.java ---》接收方
+@Service
+@RabbitListener(queues = Config.QUEUE_TEST_FANOUT_B_CODE)
+public class Test01RabbitMQListenerService extends RabbitMQListenerService<TestBean> {
+    @Override
+    public void execute((TestBean content) {
+         System.out.println(JSON.toJSONString(content));
+    }
+}
+
+2.topic模式
+发送到topic的消息不能有任意的绑定键，绑定键的规则：必须由（.）分割的单词列表。比如apple.banana.orange
+
+绑定键也有两个特殊字符：
+
+ * 可以代替一个单词。
+ ＃ 可以替代零个或多个单词。
+
+
+ QUEUE{zhangsan,lisi}
+ TopicExchange(exchange02)
+
+ zhangsan -> binding -> exchange02(topic.#)
+ lisi -> binding -> exchange02(topic.*)
+
+
+ send(topic.a.b) zhangsan 可以收到
+ send(topic.a) zhangsan.lisi 收到

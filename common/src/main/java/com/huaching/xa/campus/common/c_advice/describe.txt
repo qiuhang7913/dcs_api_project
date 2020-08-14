@@ -1,0 +1,4 @@
+全局controller增强控制
+1.应用到所有@RequestMapping注解方法，在其执行之前初始化数据绑定器
+2.把值绑定到Model中，使全局@RequestMapping可以获取到该值
+3.全局异常捕捉处理
