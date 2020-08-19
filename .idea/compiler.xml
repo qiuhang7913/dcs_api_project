@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="dcs_uoauth" />
         <module name="common" />
         <module name="dcs_ucenter" />
@@ -14,16 +15,32 @@
         <module name="dcs_gateway" />
         <module name="dcs_feign_service" />
         <module name="dcs_collect" />
+=======
+        <module name="basic" />
+        <module name="common" />
+        <module name="dcs_feign_service" />
+        <module name="dcs_gateway" />
+        <module name="dcs_ucenter" />
+        <module name="dcs_uoauth" />
+        <module name="dsc_collect" />
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="basic" target="1.8" />
       <module name="common" target="1.8" />
+<<<<<<< HEAD
       <module name="dcs_collect" target="1.8" />
+=======
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
       <module name="dcs_feign_service" target="1.8" />
       <module name="dcs_gateway" target="1.8" />
       <module name="dcs_ucenter" target="1.8" />
       <module name="dcs_uoauth" target="1.8" />
+<<<<<<< HEAD
+=======
+      <module name="dsc_collect" target="1.8" />
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
       <module name="root" target="1.8" />
     </bytecodeTargetLevel>
   </component>

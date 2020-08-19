@@ -15,7 +15,11 @@ import org.springframework.stereotype.Component;
 public class MyOAuthTokenRequestMethodErrorAop {
 
     @Around("execution(* org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.handleHttpRequestMethodNotSupportedException(..))")
+<<<<<<< HEAD
     public ResponseEntity<TokenVo> doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+=======
+    public ResponseEntity<TokenVo> hanldControllerMethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
         ResponseEntity<OAuth2Exception> excetion = (ResponseEntity<OAuth2Exception>) proceedingJoinPoint.proceed();
         TokenVo tokenVo = new TokenVo();
         tokenVo.setErrorCode(excetion.getBody().getHttpErrorCode());

@@ -20,9 +20,15 @@
         <module>dcs_ucenter</module>
         <module>dcs_gateway</module>
         <module>basic</module>
+<<<<<<< HEAD
         <module>dcs_collect</module>
         <module>dcs_uoauth</module>
         <module>dcs_feign_service</module>
+=======
+        <module>dsc_collect</module>
+        <module>dcs_uoauth</module>
+        <module>dsc_feign_service</module>
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
     </modules>
 
     <!--公共參數配置-->

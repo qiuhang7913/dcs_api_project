@@ -17,17 +17,25 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
+<<<<<<< HEAD
 
 /**
  * <p>spring OAuth2.0认证中心配置</p>
  *
  * @author qiuhang
  * @version v1.0 2019/10/5/005
+=======
+/**
+ * @description OAuth2.0认证中心配置
+ * @author qiuhang
+ * @date 2019/10/5/005
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
  */
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
+<<<<<<< HEAD
     // @Autowired
     // private DataSource dataSource;
 
@@ -37,6 +45,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private AuthenticationManager authenticationManager;
 
+=======
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    // @Autowired
+    // private DataSource dataSource;
+
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
 
@@ -46,6 +62,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+<<<<<<< HEAD
+=======
+    @Autowired
+    //private MyWebResponseExceptionTranslator myWebResponseExceptionTranslator;
+
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
     @Bean
     public TokenStore tokenStore() {
         return new RedisTokenStore(redisConnectionFactory);
@@ -69,15 +91,22 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         // clients.withClientDetails(clientDetails());
        clients.inMemory()
+<<<<<<< HEAD
 
+=======
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
                .withClient("campus-ym")
                .scopes("read")
                .secret(passwordEncoder.encode("campus-ym-001"))
                //.authorizedGrantTypes("password", "authorization_code", "refresh_token")
                .authorizedGrantTypes("password", "refresh_token")
+<<<<<<< HEAD
 
                .and()
 
+=======
+               .and()
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
                .withClient("campus-jy")
                .scopes("read")
                .secret(passwordEncoder.encode("campus-jy-001"))
@@ -92,7 +121,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 //               .authorizedGrantTypes("refresh_token", "password")
 //               .scopes("read");
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
     // @Bean
     // public ClientDetailsService clientDetails() {
     //     return new JdbcClientDetailsService(dataSource);

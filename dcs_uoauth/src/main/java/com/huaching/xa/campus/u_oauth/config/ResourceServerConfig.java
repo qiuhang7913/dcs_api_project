@@ -13,10 +13,16 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import javax.servlet.http.HttpServletResponse;
 
 /**
+<<<<<<< HEAD
  * <p>资源服务器配置</p>
  *
  * @author qiuhang
  * @version v1.0 2019/10/5/005
+=======
+ * @description 资源服务器配置
+ * @author qiuhang
+ * @date 2019/10/5/005
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
  */
 @Configuration
 @EnableResourceServer
@@ -30,9 +36,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         resources.authenticationEntryPoint((request, response, authException) -> {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType("application/json;charset=utf-8");
+<<<<<<< HEAD
             response.getWriter().write(JSON.toJSONString(
                     HttpResult.aOtherResult(HttpResultEnum.USER_ACCESS_TOKEN_FAILED,
                             "请检查身份令牌(access_token)的完整与正确性！")));
+=======
+            response.getWriter().write(JSON.toJSONString(HttpResult.aOtherResult(HttpResultEnum.USER_ACCESS_TOKEN_FAILED, "请检查身份令牌(access_token)的完整与正确性！")));
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
             response.getWriter().flush();
         });
 
@@ -46,9 +56,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authenticationEntryPoint((request, response, authException) -> {
                     response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                     response.setContentType("application/json;charset=utf-8");
+<<<<<<< HEAD
                     response.getWriter().write(JSON.toJSONString(
                             HttpResult.aOtherResult(HttpResultEnum.USER_ACCESS_TOKEN_FAILED,
                                     "请检查身份令牌(access_token)的完整与正确性！")));
+=======
+                    response.getWriter().write(JSON.toJSONString(HttpResult.aOtherResult(HttpResultEnum.USER_ACCESS_TOKEN_FAILED, "请检查身份令牌(access_token)的完整与正确性！")));
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
                     response.getWriter().flush();
                 })
                 .and()

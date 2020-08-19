@@ -4,11 +4,19 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/basic/basic.iml" filepath="$PROJECT_DIR$/basic/basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/dcs_collect/dcs_collect.iml" filepath="$PROJECT_DIR$/dcs_collect/dcs_collect.iml" />
       <module fileurl="file://$PROJECT_DIR$/dcs_feign_service/dcs_feign_service.iml" filepath="$PROJECT_DIR$/dcs_feign_service/dcs_feign_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/dcs_gateway/dcs_gateway.iml" filepath="$PROJECT_DIR$/dcs_gateway/dcs_gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/dcs_ucenter/dcs_ucenter.iml" filepath="$PROJECT_DIR$/dcs_ucenter/dcs_ucenter.iml" />
       <module fileurl="file://$PROJECT_DIR$/dcs_uoauth/dcs_uoauth.iml" filepath="$PROJECT_DIR$/dcs_uoauth/dcs_uoauth.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/dsc_feign_service/dcs_feign_service.iml" filepath="$PROJECT_DIR$/dsc_feign_service/dcs_feign_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dcs_gateway/dcs_gateway.iml" filepath="$PROJECT_DIR$/dcs_gateway/dcs_gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dcs_ucenter/dcs_ucenter.iml" filepath="$PROJECT_DIR$/dcs_ucenter/dcs_ucenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dcs_uoauth/dcs_uoauth.iml" filepath="$PROJECT_DIR$/dcs_uoauth/dcs_uoauth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dsc_collect/dsc_collect.iml" filepath="$PROJECT_DIR$/dsc_collect/dsc_collect.iml" />
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
       <module fileurl="file://$PROJECT_DIR$/root.iml" filepath="$PROJECT_DIR$/root.iml" />
     </modules>
   </component>

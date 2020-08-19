@@ -15,10 +15,16 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 import java.util.*;
 
 /**
+<<<<<<< HEAD
  * <p>spring 认证token redis 管理 copy from spring</p>
  *
  * @author qiuhang
  * @version v1.0 2019/10/5/005
+=======
+ * @description spring 认证token redis 管理 copy from spring
+ * @author qiuhang
+ * @date 2019/10/5/005
+>>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
  */
 public class RedisTokenStore implements TokenStore {
 
