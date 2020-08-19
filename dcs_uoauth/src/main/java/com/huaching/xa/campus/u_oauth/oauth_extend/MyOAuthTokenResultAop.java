@@ -46,11 +46,7 @@ public class MyOAuthTokenResultAop {
     }
 
     @Around("tokenAspect()")
-<<<<<<< HEAD
     public ResponseEntity<TokenVo> doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-=======
-    public ResponseEntity<TokenVo> hanldControllerMethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
->>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
         Object proceed = proceedingJoinPoint.proceed();
         Map<String,String> param = (Map<String, String>) proceedingJoinPoint.getArgs()[1];
         TokenVo tokenVo = new TokenVo();
@@ -73,11 +69,7 @@ public class MyOAuthTokenResultAop {
 
 
     @AfterReturning(pointcut = "tokenAspect()", returning="rvt")
-<<<<<<< HEAD
     public void doAfterReturn(JoinPoint proceedingJoinPoint, Object rvt) throws Throwable {
-=======
-    public void hanldControllerMethod(JoinPoint proceedingJoinPoint, Object rvt) throws Throwable {
->>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
         DynamicDataSourceContextHolder.clear();
     }
 }

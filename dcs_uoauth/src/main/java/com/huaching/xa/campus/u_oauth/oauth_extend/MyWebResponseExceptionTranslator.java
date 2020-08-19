@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-package com.huaching.xa.campus.u_oauth.oauth_extend;
-=======
-package com.huaching.xa.campus.u_oauth.oauth_extend;//package com.huaching.xa.campus.u_oauth.oauth_extend;
->>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
+//package com.huaching.xa.campus.u_oauth.oauth_extend;
 //
 //import com.huaching.xa.campus.common.c_enum.HttpResultEnum;
 //import com.huaching.xa.campus.u_oauth.vo.TokenVo;

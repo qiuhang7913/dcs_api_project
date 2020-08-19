@@ -3,7 +3,6 @@ package com.huaching.xa.campus.u_oauth.vo;
 
 import com.huaching.xa.campus.basic.c_vo.BaseVo;
 
-<<<<<<< HEAD
 /**
  * <p>TOKEN 返回封装</p>
  *
@@ -21,19 +20,12 @@ public class TokenVo extends BaseVo {
     /** 鉴权token失效时间 */
     private String accessTokenExpireTime;
 
-=======
-import java.util.List;
-import java.util.Map;
-
-public class TokenVo extends BaseVo {
->>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
     private Integer errorCode;
 
     private String errorMsg;
 
     private String refSchool;
 
-<<<<<<< HEAD
     public String getAccessToken() {
         return accessToken;
     }
@@ -58,8 +50,6 @@ public class TokenVo extends BaseVo {
         this.accessTokenExpireTime = accessTokenExpireTime;
     }
 
-=======
->>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
     public Integer getErrorCode() {
         return errorCode;
     }

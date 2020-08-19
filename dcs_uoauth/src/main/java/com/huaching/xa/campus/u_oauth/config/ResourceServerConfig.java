@@ -36,13 +36,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         resources.authenticationEntryPoint((request, response, authException) -> {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType("application/json;charset=utf-8");
-<<<<<<< HEAD
             response.getWriter().write(JSON.toJSONString(
                     HttpResult.aOtherResult(HttpResultEnum.USER_ACCESS_TOKEN_FAILED,
                             "请检查身份令牌(access_token)的完整与正确性！")));
-=======
-            response.getWriter().write(JSON.toJSONString(HttpResult.aOtherResult(HttpResultEnum.USER_ACCESS_TOKEN_FAILED, "请检查身份令牌(access_token)的完整与正确性！")));
->>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
             response.getWriter().flush();
         });
 
@@ -56,13 +52,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authenticationEntryPoint((request, response, authException) -> {
                     response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                     response.setContentType("application/json;charset=utf-8");
-<<<<<<< HEAD
                     response.getWriter().write(JSON.toJSONString(
                             HttpResult.aOtherResult(HttpResultEnum.USER_ACCESS_TOKEN_FAILED,
                                     "请检查身份令牌(access_token)的完整与正确性！")));
-=======
-                    response.getWriter().write(JSON.toJSONString(HttpResult.aOtherResult(HttpResultEnum.USER_ACCESS_TOKEN_FAILED, "请检查身份令牌(access_token)的完整与正确性！")));
->>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
                     response.getWriter().flush();
                 })
                 .and()

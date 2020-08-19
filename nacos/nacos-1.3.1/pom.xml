@@ -1016,7 +1016,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    maven-compiler-plugin
     <distributionManagement>
         <snapshotRepository>
             <!-- 这里的ID一定要在maven setting文件中存在于server下的ID -->

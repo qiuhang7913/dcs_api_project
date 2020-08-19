@@ -12,23 +12,15 @@
     <name>root</name>
     <description>智慧校园-产品-v1.0</description>
 
-    <!--指定使用的boot版本-->
-
     <!--子項目-->
     <modules>
-        <module>common</module>
-        <module>dcs_ucenter</module>
-        <module>dcs_gateway</module>
         <module>basic</module>
-<<<<<<< HEAD
+        <module>common</module>
+        <module>dcs_uoauth</module>
+        <module>dcs_gateway</module>
+        <module>dcs_ucenter</module>
         <module>dcs_collect</module>
-        <module>dcs_uoauth</module>
         <module>dcs_feign_service</module>
-=======
-        <module>dsc_collect</module>
-        <module>dcs_uoauth</module>
-        <module>dsc_feign_service</module>
->>>>>>> a59694efc18f7c3cd80d479c9116b8584be62b21
     </modules>
 
     <!--公共參數配置-->
@@ -38,6 +30,8 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+        <maven.resources.plugin.version>3.0.2</maven.resources.plugin.version>
         <boot.version>2.1.1.RELEASE</boot.version>
         <cloud.version>Greenwich.RELEASE</cloud.version>
         <cloud.alibaba.version>2.1.1.RELEASE</cloud.alibaba.version>
@@ -46,10 +40,11 @@
         <mybatis.plus.dynamic.version>3.1.1</mybatis.plus.dynamic.version>
         <easypoi.version>3.1.0</easypoi.version>
         <fastjson.version>1.2.47</fastjson.version>
+        <lombok.version>1.16.10</lombok.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <commons.io.version>2.5</commons.io.version>
     </properties>
 
-
-    <!--指定springcloud版本-->
     <dependencyManagement>
         <dependencies>
             <!--指定使用的boot版本-->
@@ -82,9 +77,57 @@
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <pluginManagement>
+            <plugins>
 
-    <dependencies>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${boot.version}</version>
+                </plugin>
 
-    </dependencies>
+                <!-- 指定maven编译的jdk版本,如果不指定,maven3默认用jdk 1.5 maven2默认用jdk1.3 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                </plugin>
 
+                <!--插件负责处理项目资源文件并拷贝到输出目录。http://maven.apache.org/plugins/maven-resources-plugin/-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+    </build>
+
+    <!--<profiles>-->
+    <!--&lt;!&ndash; 生产环境 &ndash;&gt;-->
+    <!--<profile>-->
+    <!--<id>dev</id>-->
+    <!--<activation>-->
+    <!--<activeByDefault>true</activeByDefault>-->
+    <!--</activation>-->
+    <!--<properties>-->
+    <!--<profiles.active>dev</profiles.active>-->
+    <!--<target.dir>src/profiles/dev/</target.dir>-->
+    <!--</properties>-->
+    <!--</profile>-->
+    <!--&lt;!&ndash; 生产环境 &ndash;&gt;-->
+    <!--<profile>-->
+    <!--<id>prod</id>-->
+    <!--<activation>-->
+    <!--<activeByDefault>true</activeByDefault>-->
+    <!--</activation>-->
+    <!--<properties>-->
+    <!--<profiles.active>prod</profiles.active>-->
+    <!--<target.dir>src/profiles/prod/</target.dir>-->
+    <!--</properties>-->
+
+    <!--</profile>-->
+    <!--</profiles>-->
 </project>

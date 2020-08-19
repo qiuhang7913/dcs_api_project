@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class FallbackClientFactory implements FallbackFactory<TestFeignService> {
 
-
+    
     @Override
     public TestFeignService create(Throwable throwable) {
         return () -> HttpResult.errorOtherResult(HttpResultEnum.SYSTEM_RRROR);
