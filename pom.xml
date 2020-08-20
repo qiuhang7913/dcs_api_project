@@ -21,6 +21,7 @@
         <module>dcs_ucenter</module>
         <module>dcs_collect</module>
         <module>dcs_feign_service</module>
+        <module>code_generator</module>
     </modules>
 
     <!--公共參數配置-->
